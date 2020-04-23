@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Textahead extends Component {
+import "./Typeahead.scss";
+
+class Typeahead extends Component {
   static propTypes = {
     suggestions: PropTypes.instanceOf(Array),
   };
@@ -20,7 +22,7 @@ class Textahead extends Component {
       filteredSuggestions: [],
       // show suggestions based on filtered suggestions
       showSuggestions: false,
-      // user input from textahead input field
+      // user input from Typeahead input field
       userInput: "",
     };
   }
@@ -63,20 +65,22 @@ class Textahead extends Component {
     const { filteredSuggestions, showSuggestions } = this.state;
     const suggestedItems = filteredSuggestions.map((suggestion) => {
       return (
-        <li className="textahead__item" key={suggestion}>
-          {suggestion}
+        <li className="typeahead__item" key={suggestion}>
+          <a className="typeahead__item-link">{suggestion}</a>
         </li>
       );
     });
 
-    const suggestedItemsComponent = <ul>{suggestedItems}</ul>;
+    const suggestedItemsComponent = (
+      <ul className="typeahead__items">{suggestedItems}</ul>
+    );
 
     return (
-      <div>
-        Textahead
+      <div className="typeahead__container">
         <input
           type="text"
-          name="textahead"
+          name="typeahead"
+          className="typeahead__input"
           onChange={this.handleUserInput.bind(this)}
         />
         {showSuggestions && suggestedItemsComponent}
@@ -85,4 +89,4 @@ class Textahead extends Component {
   }
 }
 
-export default Textahead;
+export default Typeahead;

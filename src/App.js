@@ -1,26 +1,11 @@
 import React from "react";
-import Autocomplete from "./components/Autocomplete";
-import Textahead from "./components/Textahead";
+import Typeahead from "./components/Typeahead";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Autocomplete
-        suggestions={[
-          "Alligator",
-          "Bask",
-          "Crocodilian",
-          "Death Roll",
-          "Eggs",
-          "Jaws",
-          "Reptile",
-          "Solitary",
-          "Tail",
-          "Wetlands",
-        ]}
-      />
-      <Textahead
+      <Typeahead
         suggestions={[
           "Alligator",
           "Bask",
