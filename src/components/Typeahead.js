@@ -61,8 +61,33 @@ class Typeahead extends Component {
     });
   };
 
+  handleKeyDown = (e) => {
+    const { filteredSuggestions, activeSuggestion } = this.state;
+    // console.log(filteredSuggestions);
+
+    if (e.keyCode === 13) {
+      console.log("enter");
+    } else if (e.keyCode === 40) {
+      if (activeSuggestion > filteredSuggestions.length - 1) {
+        return;
+      }
+
+      this.setState({
+        activeSuggestion: activeSuggestion + 1,
+      });
+    } else if (e.keyCode === 38) {
+      if (activeSuggestion === -1) {
+        return;
+      }
+
+      this.setState({
+        activeSuggestion: activeSuggestion - 1,
+      });
+    }
+  };
+
   render() {
-    const { filteredSuggestions, showSuggestions } = this.state;
+    const { filteredSuggestions, showSuggestions, userInput } = this.state;
     const suggestedItems = filteredSuggestions.map((suggestion) => {
       return (
         <li className="typeahead__item" key={suggestion}>
@@ -82,6 +107,8 @@ class Typeahead extends Component {
           name="typeahead"
           className="typeahead__input"
           onChange={this.handleUserInput.bind(this)}
+          onKeyDown={this.handleKeyDown.bind(this)}
+          value={userInput}
         />
         {showSuggestions && suggestedItemsComponent}
       </div>
