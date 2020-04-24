@@ -7,47 +7,48 @@ $grey-400: #aaaaaa;
 $border: 1px solid $lavender;
 
 .typeahead__container {
-  width: 500px;
+    width: 500px;
 }
 
 .typeahead__label {
-  padding: 4px 8px;
+    padding: 4px 8px;
 }
 
 .typeahead__input {
-  padding: 8px 12px;
-  width: 100%;
-  height: 18px;
-  border: $border;
+    padding: 8px 12px;
+    width: 100%;
+    height: 18px;
+    border: $border;
 }
 
 .typeahead__items {
-  width: 200px;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .typeahead__item {
-  position: relative;
-  list-style: none;
-  width: 100%;
-
-  .typeahead__item-link {
-    font-size: 12px;
+    position: relative;
+    list-style: none;
     width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: $border;
-    border-right: $border;
-    border-left: $border;
-    padding: 8px 12px;
-    height: 18px;
-    cursor: pointer;
 
-    &:hover {
-      background-color: $grey-100;
+    .typeahead__item-link {
+        font-size: 12px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-bottom: $border;
+        border-right: $border;
+        border-left: $border;
+        padding: 8px 12px;
+        height: 18px;
+        cursor: pointer;
+
+        &.typeahead__item-link--active,
+        &:hover {
+            background-color: $grey-100;
+        }
     }
-  }
 }
