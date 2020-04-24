@@ -1,6 +1,6 @@
 import React from 'react';
 import Typeahead from './components/Typeahead';
-import DragDrop from './components/DragDrop';
+import DragDrop from './components/DragDrop/DragDrop';
 import './App.css';
 
 const MOCK_DATA = [

@@ -32,6 +32,7 @@ $border: 1px solid $lavender;
     position: relative;
     list-style: none;
     width: 100%;
+    cursor: pointer;
 
     .draggable__item-link {
         font-size: 12px;
@@ -42,7 +43,6 @@ $border: 1px solid $lavender;
         border: $border;
         padding: 8px 12px;
         height: 18px;
-        cursor: pointer;
 
         &.draggable__item-link--active,
         &:hover {
@@ -52,6 +52,6 @@ $border: 1px solid $lavender;
 }
 
 .draggable__item--drag {
-    position: fixed;
-    width: 500px;
+    cursor: grabbing;
+    z-index: 9;
 }
